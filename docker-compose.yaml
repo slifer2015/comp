@@ -1,5 +1,11 @@
 version: '2'
 services:
+  gateway:
+    build:  ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - kibana
   fluentd:
     build: ./fluentd
     volumes:
